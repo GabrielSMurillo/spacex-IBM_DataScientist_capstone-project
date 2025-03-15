@@ -10,9 +10,7 @@ This repository contains the final deliverables for the SpaceX Capstone Project,
 ## Repository Structure
 
 - **code/**: Contains Python scripts and Jupyter Notebooks for data collection, cleaning, and predictive modeling.
-- **report/**: Contains the final report in LaTeX (both `.tex` and compiled `.pdf` versions).
-- **presentation/**: Contains the final presentation slides (in PDF format).
-- **README.md**: This file.
+- **report/**: Contains the final report in pdf. 
 
 ## Dependencies
 
