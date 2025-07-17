@@ -1,25 +1,107 @@
-# SpaceX Capstone Project
+# SpaceX Falcon 9 First Stage Landing Prediction
 
-This is the capstone project from the [IBM Data Science Professional Certificate course](https://www.coursera.org/professional-certificates/ibm-data-science).
+![Project Status](https://img.shields.io/badge/status-completed-brightgreen)
+![Python](https://img.shields.io/badge/Python-3.8-blue?logo=python)
+![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
+## 🚀 Project Overview
 
-Coursera Capstone Project Description: "In this capstone, we will predict if the Falcon 9 first stage will land successfully. SpaceX advertises Falcon 9 rocket launches on its website with a cost of 62 million dollars; other providers cost upward of 165 million dollars each, much of the savings is because SpaceX can reuse the first stage. Therefore if we can determine if the first stage will land, we can determine the cost of a launch. This information can be used if an alternate company wants to bid against SpaceX for a rocket launch. In this lab, you will collect and make sure the data is in the correct format from an API. The following is an example of a successful and launch."
+This project was developed as the final deliverable for the [IBM Data Science Professional Certificate](https://www.coursera.org/professional-certificates/ibm-data-science). The objective was to predict whether the **first stage of the SpaceX Falcon 9 rocket** would land successfully or not, using machine learning techniques applied to mission telemetry and launch data.
 
-This repository contains the final deliverables for the SpaceX Capstone Project, including source code, a final report, and a presentation. The project uses advanced data science and machine learning techniques to predict the landing success of SpaceX Falcon 9's first stage. The analysis integrates multi-source data collection, extensive exploratory data analysis (EDA), interactive visualizations, and predictive modeling to provide actionable insights for optimizing launch operations.
+SpaceX frequently reuses its rocket boosters, significantly reducing the cost of space missions. Accurately predicting booster landings helps in improving mission planning, cost optimization, and launch reliability.
 
-## Repository Structure
+---
 
-- **code/**: Contains Python scripts and Jupyter Notebooks for data collection, cleaning, and predictive modeling.
-- **report/**: Contains the final report in pdf. 
+## 📊 Key Highlights
 
-## Dependencies
+* **Data Sources:** Launch records from SpaceX, collected via APIs, web scraping, and curated databases.
+* **Techniques Used:**
 
-- **Python 3.8+**
-- LaTeX distribution for compiling the report
+  * Exploratory Data Analysis (EDA)
+  * Feature Engineering
+  * Classification Algorithms (Logistic Regression, SVM, Decision Trees, kNN)
+  * Hyperparameter Tuning
+  * Interactive Dashboard with Plotly Dash
+* **Best Model:** Decision Tree (post tuning)
+* **Performance:**
 
-## Contact
+  * Accuracy: 83.33%
+  * Jaccard Score: 0.75 - 0.80
+  * F1-Score: up to 0.88
 
-For any questions or further information, please contact:  
-**Gabriel Santiago Murillo Barragan**  
-Biomedical Engineering, Universidad de los Andes; Medicine student, Universidad Nacional de Colombia  
-Email: gsmurilloba@unal.edu.co
+---
+
+## 📊 Model Evaluation Results
+
+| Metric        | LogReg | SVM    | Decision Tree | kNN    |
+| ------------- | ------ | ------ | ------------- | ------ |
+| Accuracy      | 0.8333 | 0.8333 | **0.8333**    | 0.8333 |
+| Jaccard Score | 0.8000 | 0.8000 | **0.7500**    | 0.8000 |
+| F1-Score      | 0.8889 | 0.8889 | **0.8571**    | 0.8889 |
+
+> Confusion Matrix for best model (Decision Tree):
+>
+> * 12/12 successful landings correctly predicted
+> * 3 failed landings misclassified as successful (false positives)
+
+---
+
+## 📂 Repository Structure
+
+```
+├── code/
+│   ├── Multiple Jupyter Notebooks for EDA, preprocessing, modeling, and dashboard
+│   ├── spaceX_dash_app.py : Plotly Dash web app
+│   └── spaceX_launch_dash.csv : Dataset
+│
+├── presentation/
+│   └── Interactive Dashboard with Plotly Dash.pdf
+│
+├── report/
+│   └── Final technical report in LaTeX (with figures and tables)
+```
+
+---
+
+## 📝 Dependencies
+
+* Python 3.8+
+* pandas, numpy, matplotlib, seaborn
+* scikit-learn
+* dash, plotly
+* BeautifulSoup, requests
+* sqlite3
+* LaTeX (for compiling report)
+
+To install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 📈 Dashboard Preview
+
+An interactive web dashboard was created using **Plotly Dash** to visualize launch patterns and booster success rates. It includes:
+
+* Launch success pie charts
+* Payload vs success scatter plots
+* Launch site filtering
+
+The `.pdf` file version of the dashboard interface is available in the `presentation/` folder.
+
+---
+
+## 👤 Author
+
+Gabriel Santiago Murillo Barragán
+Biomedical Engineering, Universidad de los Andes
+Medical Student, Universidad Nacional de Colombia
+[Email me](mailto:gabrielsmurillo@unal.edu.co)
+
+---
+
+## 🔖 License
+
+This project is licensed under the MIT License.
